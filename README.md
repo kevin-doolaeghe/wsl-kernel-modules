@@ -167,3 +167,17 @@ airmon-ng stop wlan0
 sudo usbip port
 sudo usbip detach --port=
 ```
+
+## References
+
+* [Microsoft Github Repository - WSL2-Linux-Kernel](https://github.com/microsoft/WSL2-Linux-Kernel)
+* [WSL2 `/lib/modules` Stack Exchange Discussion](https://unix.stackexchange.com/questions/594470/wsl-2-does-not-have-lib-modules)
+* [Github Gist - Custom WSL2 Kernel Build](https://gist.github.com/charlie-x/96a92aaaa04346bdf1fb4c3621f3e392)
+* [`RTL8812AU` Driver Installation On RPI](https://raspberrypi.stackexchange.com/questions/120134/install-drivers-for-rtl8812au-for-raspibian-kernel-5-4-79-v71-rpi-4)
+* [Basic `RTL8812AU` Drive Configuration](https://adam-toscher.medium.com/configure-your-new-wireless-ac-1fb65c6ada57)
+* [`aircrack-ng` Deauthentication Attack](https://hackernoon.com/forcing-a-device-to-disconnect-from-wifi-using-a-deauthentication-attack-f664b9940142)
+* [Windows `aireplay-ng` Packet Injection](https://web.archive.org/web/20080921000952/http://airdump.net/aireplay-packet-injection-windows/)
+* [Wireless Capture On Windows](https://blog.packet-foo.com/2019/04/wireless-capture-on-windows/comment-page-1/)
+* [NPCAP Developer Guide](https://npcap.com/guide/npcap-devguide.html)
+* [USB-IP For Windows](https://github.com/kevin-doolaeghe/usbip-win)
+* [WSL2 Setup Guide](https://learn.microsoft.com/fr-fr/windows/wsl/install)
