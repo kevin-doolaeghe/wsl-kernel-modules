@@ -181,3 +181,4 @@ sudo usbip detach --port=
 * [NPCAP Developer Guide](https://npcap.com/guide/npcap-devguide.html)
 * [USB-IP For Windows](https://github.com/kevin-doolaeghe/usbip-win)
 * [WSL2 Setup Guide](https://learn.microsoft.com/fr-fr/windows/wsl/install)
+* [Kali Tools Guide](https://www.kali.org/tools/)
