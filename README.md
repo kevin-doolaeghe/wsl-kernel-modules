@@ -168,6 +168,90 @@ sudo usbip port
 sudo usbip detach --port=
 ```
 
+## `usbip` scripts
+
+### Attach a USB device
+
+* Create and edit a file called `musb` :
+```
+nano musb
+```
+
+* Add the following content to this file :
+```
+#!/bin/bash
+
+if ! [ $(id -u) = 0 ]; then
+   echo "The script need to be run as root." >&2
+   exit 1
+fi
+
+echo "Enter the IP address of the foreign device :"
+read ip
+
+echo ""
+usbip list -r $ip
+
+echo "Enter the name of the shared USB device to import :"
+read usb
+
+echo ""
+usbip attach -r $ip -b $usb
+
+sleep 1
+usbip port
+```
+
+* Add execution permissions to the file :
+```
+chmod +x musb
+```
+
+* Run the script :
+```
+sudo ./musb
+```
+
+### Detach a USB device
+
+
+* Create and edit a file called `musb` :
+```
+nano uusb
+```
+
+* Add the following content to this file :
+```
+#!/bin/bash
+
+if ! [ $(id -u) = 0 ]; then
+   echo "The script need to be run as root." >&2
+   exit 1
+fi
+
+usbip port
+
+echo ""
+echo "Enter the USB device to detach :"
+read usb
+
+echo ""
+usbip detach -p $usb
+
+sleep 1
+usbip port
+```
+
+* Add execution permissions to the file :
+```
+chmod +x uusb
+```
+
+* Run the script :
+```
+sudo ./uusb
+```
+
 ## References
 
 * [Microsoft Github Repository - WSL2-Linux-Kernel](https://github.com/microsoft/WSL2-Linux-Kernel)
