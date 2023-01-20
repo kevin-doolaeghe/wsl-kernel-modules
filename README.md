@@ -168,7 +168,7 @@ sudo usbip port
 sudo usbip detach --port=
 ```
 
-## `usbip` scripts
+## Create `usbip` scripts
 
 ### Attach a USB device
 
