@@ -1,0 +1,18 @@
+#!/bin/bash
+
+if ! [ $(id -u) = 0 ]; then
+   echo "The script need to be run as root." >&2
+   exit 1
+fi
+
+usbip port
+
+echo ""
+echo "Enter the USB device to detach :"
+read usb
+
+echo ""
+usbip detach -p $usb
+
+sleep 1
+usbip port

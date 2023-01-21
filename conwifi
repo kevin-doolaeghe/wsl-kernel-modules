@@ -1,0 +1,15 @@
+#!/bin/bash
+
+if ! [ $(id -u) = 0 ]; then
+   echo "The script need to be run as root." >&2
+   exit 1
+fi
+
+musb
+
+modprobe cfg80211
+modprobe 88XXau.ko
+
+ip a
+
+airmon-ng start wlan0

@@ -1,0 +1,21 @@
+#!/bin/bash
+
+if ! [ $(id -u) = 0 ]; then
+   echo "The script need to be run as root." >&2
+   exit 1
+fi
+
+echo "Enter the IP address of the foreign device :"
+read ip
+
+echo ""
+usbip list -r $ip
+
+echo "Enter the name of the shared USB device to import :"
+read usb
+
+echo ""
+usbip attach -r $ip -b $usb
+
+sleep 1
+usbip port
