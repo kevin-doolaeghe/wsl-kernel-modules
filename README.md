@@ -263,6 +263,7 @@ sudo ./uusb
 * [`RTL8812AU` Driver Installation On RPI](https://raspberrypi.stackexchange.com/questions/120134/install-drivers-for-rtl8812au-for-raspibian-kernel-5-4-79-v71-rpi-4)
 * [Basic `RTL8812AU` Drive Configuration](https://adam-toscher.medium.com/configure-your-new-wireless-ac-1fb65c6ada57)
 * [`aircrack-ng` Deauthentication Attack](https://hackernoon.com/forcing-a-device-to-disconnect-from-wifi-using-a-deauthentication-attack-f664b9940142)
+* [WEP Wi-Fi Network Cracking](https://www.aircrack-ng.org/doku.php?id=simple_wep_crack)
 * [Windows `aireplay-ng` Packet Injection](https://web.archive.org/web/20080921000952/http://airdump.net/aireplay-packet-injection-windows/)
 * [Wireless Capture On Windows](https://blog.packet-foo.com/2019/04/wireless-capture-on-windows/comment-page-1/)
 * [NPCAP Developer Guide](https://npcap.com/guide/npcap-devguide.html)
