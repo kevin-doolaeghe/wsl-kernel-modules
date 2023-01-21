@@ -96,14 +96,12 @@ cd rtl8812au
 * Build the module with the new kernel headers :
 ```
 sudo make
-sudo make install
 ```
-:warning: The headers must be installed in the `/lib/modules/$(uname -r)` directory.  
+:white_check_mark: This commands generates a `.ko` file which correspond to the built module.  
+:warning: The headers must be installed in the `/lib/modules/$(uname -r)/build` directory.  
 You can check your WSL2 version by running `uname -r`.
 
-:white_check_mark: This commands generates a `.ko` file which correspond to the built module.
-
-* Enable `cfg80211` and `88XXau.ko` modules :
+Test : Enable `cfg80211` and `88XXau.ko` modules :
 ```
 sudo modprobe cfg80211
 sudo insmod 88XXau.ko
@@ -111,14 +109,19 @@ lsmod
 ```
 :warning: `cfg80211` module must be loaded before `88XXau.ko`.
 
-## Load modules at boot time
-
-* Copy `rtl88XXau` module to `lib/modules/` directory :
+* Install the module :
 ```
-sudo cp -r 88XXau.ko /lib/modules/$(uname -r)/kernel/drivers/net/wireless/
-sudo depmod
+sudo mkdir -p /lib/modules/$(uname -r)/kernel/drivers/net/wireless
+sudo make install
 ```
 Note : Now, `sudo modprobe 88XXau` command will work.
+
+* Enable the module :
+```
+sudo modprobe 88XXau
+```
+
+## Load modules at boot time
 
 * Add modules that need to be loaded at boot time to the `/etc/modules-load.d/` directory :
 ```
