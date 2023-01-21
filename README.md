@@ -115,10 +115,10 @@ lsmod
 
 * Copy `rtl88XXau` module to `lib/modules/` directory :
 ```
-sudo mkdir /lib/modules/$(uname -r)/kernel/drivers/
-sudo cp 88XXau.ko /lib/modules/$(uname -r)/kernel/drivers/
+sudo cp -r 88XXau.ko /lib/modules/$(uname -r)/kernel/drivers/net/wireless/
 sudo depmod
 ```
+Note : Now, `sudo modprobe 88XXau` command will work.
 
 * Add modules that need to be loaded at boot time to the `/etc/modules-load.d/` directory :
 ```
