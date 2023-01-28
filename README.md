@@ -228,7 +228,6 @@ sudo ./musb
 
 ### Detach a USB device
 
-
 * Create and edit a file called `musb` :
 ```
 nano uusb
